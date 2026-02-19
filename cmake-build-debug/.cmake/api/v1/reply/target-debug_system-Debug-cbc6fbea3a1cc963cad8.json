@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "test_http"
+			"path" : "debug_system"
 		}
 	],
 	"backtrace" : 1,
@@ -53,7 +53,7 @@
 			]
 		}
 	],
-	"id" : "test_http::@6890427a1f51a3e7e1df",
+	"id" : "debug_system::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -69,8 +69,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "test_http",
-	"nameOnDisk" : "test_http",
+	"name" : "debug_system",
+	"nameOnDisk" : "debug_system",
 	"paths" : 
 	{
 		"build" : ".",

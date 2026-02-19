@@ -41,46 +41,46 @@ include CMakeFiles/rules.ninja
 
 cmake_ninja_workdir = /home/heavy/Projects/ServerProjects/git_systems/debug_system/cmake-build-debug/
 # =============================================================================
-# Object build statements for EXECUTABLE target test_http
+# Object build statements for EXECUTABLE target debug_system
 
 
 #############################################
-# Order-only phony target for test_http
+# Order-only phony target for debug_system
 
-build cmake_object_order_depends_target_test_http: phony || .
+build cmake_object_order_depends_target_debug_system: phony || .
 
-build CMakeFiles/test_http.dir/src/DebugSystem.cpp.o.ddi: CXX_SCAN__test_http_Debug /home/heavy/Projects/ServerProjects/git_systems/debug_system/src/DebugSystem.cpp || cmake_object_order_depends_target_test_http
-  DEP_FILE = CMakeFiles/test_http.dir/src/DebugSystem.cpp.o.ddi.d
-  DYNDEP_INTERMEDIATE_FILE = CMakeFiles/test_http.dir/src/DebugSystem.cpp.o.ddi
+build CMakeFiles/debug_system.dir/src/DebugSystem.cpp.o.ddi: CXX_SCAN__debug_system_Debug /home/heavy/Projects/ServerProjects/git_systems/debug_system/src/DebugSystem.cpp || cmake_object_order_depends_target_debug_system
+  DEP_FILE = CMakeFiles/debug_system.dir/src/DebugSystem.cpp.o.ddi.d
+  DYNDEP_INTERMEDIATE_FILE = CMakeFiles/debug_system.dir/src/DebugSystem.cpp.o.ddi
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
-  OBJ_FILE = CMakeFiles/test_http.dir/src/DebugSystem.cpp.o
-  PREPROCESSED_OUTPUT_FILE = CMakeFiles/test_http.dir/src/DebugSystem.cpp.o.ddi.i
+  OBJ_FILE = CMakeFiles/debug_system.dir/src/DebugSystem.cpp.o
+  PREPROCESSED_OUTPUT_FILE = CMakeFiles/debug_system.dir/src/DebugSystem.cpp.o.ddi.i
 
-build CMakeFiles/test_http.dir/src/DebugSystem.cpp.o: CXX_COMPILER__test_http_scanned_Debug /home/heavy/Projects/ServerProjects/git_systems/debug_system/src/DebugSystem.cpp | CMakeFiles/test_http.dir/src/DebugSystem.cpp.o.modmap || cmake_object_order_depends_target_test_http CMakeFiles/test_http.dir/CXX.dd
-  DEP_FILE = CMakeFiles/test_http.dir/src/DebugSystem.cpp.o.d
-  DYNDEP_MODULE_MAP_FILE = CMakeFiles/test_http.dir/src/DebugSystem.cpp.o.modmap
+build CMakeFiles/debug_system.dir/src/DebugSystem.cpp.o: CXX_COMPILER__debug_system_scanned_Debug /home/heavy/Projects/ServerProjects/git_systems/debug_system/src/DebugSystem.cpp | CMakeFiles/debug_system.dir/src/DebugSystem.cpp.o.modmap || cmake_object_order_depends_target_debug_system CMakeFiles/debug_system.dir/CXX.dd
+  DEP_FILE = CMakeFiles/debug_system.dir/src/DebugSystem.cpp.o.d
+  DYNDEP_MODULE_MAP_FILE = CMakeFiles/debug_system.dir/src/DebugSystem.cpp.o.modmap
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles/test_http.dir
-  OBJECT_FILE_DIR = CMakeFiles/test_http.dir/src
-  dyndep = CMakeFiles/test_http.dir/CXX.dd
+  OBJECT_DIR = CMakeFiles/debug_system.dir
+  OBJECT_FILE_DIR = CMakeFiles/debug_system.dir/src
+  dyndep = CMakeFiles/debug_system.dir/CXX.dd
 
-build CMakeFiles/test_http.dir/CXX.dd | /home/heavy/Projects/ServerProjects/git_systems/debug_system/cmake-build-debug/CMakeFiles/test_http.dir/CXXModules.json CMakeFiles/test_http.dir/src/DebugSystem.cpp.o.modmap: CXX_DYNDEP__test_http_Debug CMakeFiles/test_http.dir/src/DebugSystem.cpp.o.ddi | /home/heavy/Projects/ServerProjects/git_systems/debug_system/cmake-build-debug/CMakeFiles/test_http.dir/CXXDependInfo.json
+build CMakeFiles/debug_system.dir/CXX.dd | /home/heavy/Projects/ServerProjects/git_systems/debug_system/cmake-build-debug/CMakeFiles/debug_system.dir/CXXModules.json CMakeFiles/debug_system.dir/src/DebugSystem.cpp.o.modmap: CXX_DYNDEP__debug_system_Debug CMakeFiles/debug_system.dir/src/DebugSystem.cpp.o.ddi | /home/heavy/Projects/ServerProjects/git_systems/debug_system/cmake-build-debug/CMakeFiles/debug_system.dir/CXXDependInfo.json
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target test_http
+# Link build statements for EXECUTABLE target debug_system
 
 
 #############################################
-# Link the executable test_http
+# Link the executable debug_system
 
-build test_http: CXX_EXECUTABLE_LINKER__test_http_Debug CMakeFiles/test_http.dir/src/DebugSystem.cpp.o
+build debug_system: CXX_EXECUTABLE_LINKER__debug_system_Debug CMakeFiles/debug_system.dir/src/DebugSystem.cpp.o
   FLAGS = -g
-  OBJECT_DIR = CMakeFiles/test_http.dir
+  OBJECT_DIR = CMakeFiles/debug_system.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_FILE = test_http
-  TARGET_PDB = test_http.dbg
+  TARGET_FILE = debug_system
+  TARGET_PDB = debug_system.dbg
 
 
 #############################################
@@ -116,7 +116,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 #############################################
 # Folder: /home/heavy/Projects/ServerProjects/git_systems/debug_system/cmake-build-debug
 
-build all: phony test_http
+build all: phony debug_system
 
 # =============================================================================
 # Built-in targets
