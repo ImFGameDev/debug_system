@@ -1,3 +1,0 @@
-/home/heavy/Projects/ServerProjects/git_systems/debug_system/cmake-build-debug/CMakeFiles/debug_system.dir
-/home/heavy/Projects/ServerProjects/git_systems/debug_system/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/heavy/Projects/ServerProjects/git_systems/debug_system/cmake-build-debug/CMakeFiles/rebuild_cache.dir
