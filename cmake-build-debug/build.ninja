@@ -41,7 +41,7 @@ include CMakeFiles/rules.ninja
 
 cmake_ninja_workdir = /home/heavy/Projects/ServerProjects/git_systems/debug_system/cmake-build-debug/
 # =============================================================================
-# Object build statements for EXECUTABLE target debug_system
+# Object build statements for STATIC_LIBRARY target debug_system
 
 
 #############################################
@@ -49,38 +49,28 @@ cmake_ninja_workdir = /home/heavy/Projects/ServerProjects/git_systems/debug_syst
 
 build cmake_object_order_depends_target_debug_system: phony || .
 
-build CMakeFiles/debug_system.dir/src/DebugSystem.cpp.o.ddi: CXX_SCAN__debug_system_Debug /home/heavy/Projects/ServerProjects/git_systems/debug_system/src/DebugSystem.cpp || cmake_object_order_depends_target_debug_system
-  DEP_FILE = CMakeFiles/debug_system.dir/src/DebugSystem.cpp.o.ddi.d
-  DYNDEP_INTERMEDIATE_FILE = CMakeFiles/debug_system.dir/src/DebugSystem.cpp.o.ddi
-  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
-  OBJ_FILE = CMakeFiles/debug_system.dir/src/DebugSystem.cpp.o
-  PREPROCESSED_OUTPUT_FILE = CMakeFiles/debug_system.dir/src/DebugSystem.cpp.o.ddi.i
-
-build CMakeFiles/debug_system.dir/src/DebugSystem.cpp.o: CXX_COMPILER__debug_system_scanned_Debug /home/heavy/Projects/ServerProjects/git_systems/debug_system/src/DebugSystem.cpp | CMakeFiles/debug_system.dir/src/DebugSystem.cpp.o.modmap || cmake_object_order_depends_target_debug_system CMakeFiles/debug_system.dir/CXX.dd
-  DEP_FILE = CMakeFiles/debug_system.dir/src/DebugSystem.cpp.o.d
-  DYNDEP_MODULE_MAP_FILE = CMakeFiles/debug_system.dir/src/DebugSystem.cpp.o.modmap
-  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+build CMakeFiles/debug_system.dir/src/debug_system.cpp.o: CXX_COMPILER__debug_system_unscanned_Debug /home/heavy/Projects/ServerProjects/git_systems/debug_system/src/debug_system.cpp || cmake_object_order_depends_target_debug_system
+  DEP_FILE = CMakeFiles/debug_system.dir/src/debug_system.cpp.o.d
+  FLAGS = -g -fdiagnostics-color=always
+  INCLUDES = -I/home/heavy/Projects/ServerProjects/git_systems/debug_system/include
   OBJECT_DIR = CMakeFiles/debug_system.dir
   OBJECT_FILE_DIR = CMakeFiles/debug_system.dir/src
-  dyndep = CMakeFiles/debug_system.dir/CXX.dd
-
-build CMakeFiles/debug_system.dir/CXX.dd | /home/heavy/Projects/ServerProjects/git_systems/debug_system/cmake-build-debug/CMakeFiles/debug_system.dir/CXXModules.json CMakeFiles/debug_system.dir/src/DebugSystem.cpp.o.modmap: CXX_DYNDEP__debug_system_Debug CMakeFiles/debug_system.dir/src/DebugSystem.cpp.o.ddi | /home/heavy/Projects/ServerProjects/git_systems/debug_system/cmake-build-debug/CMakeFiles/debug_system.dir/CXXDependInfo.json
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target debug_system
+# Link build statements for STATIC_LIBRARY target debug_system
 
 
 #############################################
-# Link the executable debug_system
+# Link the static library libdebug_system.a
 
-build debug_system: CXX_EXECUTABLE_LINKER__debug_system_Debug CMakeFiles/debug_system.dir/src/DebugSystem.cpp.o
-  FLAGS = -g
+build libdebug_system.a: CXX_STATIC_LIBRARY_LINKER__debug_system_Debug CMakeFiles/debug_system.dir/src/debug_system.cpp.o
+  LANGUAGE_COMPILE_FLAGS = -g
   OBJECT_DIR = CMakeFiles/debug_system.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_FILE = debug_system
-  TARGET_PDB = debug_system.dbg
+  TARGET_FILE = libdebug_system.a
+  TARGET_PDB = debug_system.a.dbg
 
 
 #############################################
@@ -108,6 +98,8 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 # Target aliases.
 
+build debug_system: phony libdebug_system.a
+
 # =============================================================================
 # Folder targets.
 
@@ -116,7 +108,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 #############################################
 # Folder: /home/heavy/Projects/ServerProjects/git_systems/debug_system/cmake-build-debug
 
-build all: phony debug_system
+build all: phony libdebug_system.a
 
 # =============================================================================
 # Built-in targets

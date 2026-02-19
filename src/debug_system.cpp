@@ -1,4 +1,4 @@
-#include "DebugSystem.h"
+#include "../include/debug_system.h"
 #include <chrono>
 #include <string>
 #include <iostream>
@@ -42,7 +42,7 @@ namespace main_player::core::debug
     }*/
 
     //Выводят в консоль и кешируют логи
-    void DebugSystem::log(const std::string& tag, const std::string& text)
+    void debug_system::log(const std::string& tag, const std::string& text)
     {
         auto log = "\n" + get_time() + " " + tag + " => " + text;
 
@@ -52,7 +52,7 @@ namespace main_player::core::debug
         //_text_log += log;
     }
 
-    void DebugSystem::log_green(const std::string& tag, const std::string& text)
+    void debug_system::log_green(const std::string& tag, const std::string& text)
     {
         auto log = "\n" + get_time() + " " + tag + " => " + text;
 
@@ -62,7 +62,7 @@ namespace main_player::core::debug
         //_text_log += log;
     }
 
-    void DebugSystem::error(const std::string& tag, const std::string& text)
+    void debug_system::error(const std::string& tag, const std::string& text)
     {
         auto log = "\n" + get_time() + " " + tag + " => " + text;
 
@@ -73,13 +73,13 @@ namespace main_player::core::debug
     }
 
     //Вывод кешированных логов
-    void DebugSystem::info_log()
+    void debug_system::info_log()
     {
         std::system("/usr/bin/clear");
         cout << "\n" << _text_log << endl;
     }
 
-    void DebugSystem::info_log(const std::string& tag)
+    void debug_system::info_log(const std::string& tag)
     {
         std::system("/usr/bin/clear");
         //if (_dict_log.contains(tag)) cout << _dict_log[tag] << endl;
@@ -87,13 +87,13 @@ namespace main_player::core::debug
         cout << "\n" << "logs null" << endl;
     }
 
-    void DebugSystem::info_error()
+    void debug_system::info_error()
     {
         std::system("/usr/bin/clear");
         cout << "\n" << _text_error << endl;
     }
 
-    void DebugSystem::info_error(const std::string& tag)
+    void debug_system::info_error(const std::string& tag)
     {
         std::system("/usr/bin/clear");
         //if (_dict_error.contains(tag)) cout << _dict_error[tag] << endl;

@@ -5,11 +5,11 @@ using namespace std;
 
 namespace main_player::core::debug
 {
-	class DebugSystem
+	class debug_system
 	{
 	public:
-		DebugSystem() = delete;
-		~DebugSystem() = delete;
+		debug_system() = delete;
+		~debug_system() = delete;
 
 		static void log(const std::string& tag,const  std::string& text);
 
