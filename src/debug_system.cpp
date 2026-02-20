@@ -1,10 +1,9 @@
-#include "../include/debug_system.h"
 #include <chrono>
 #include <string>
 #include <iostream>
-//#include <unordered_map>
+#include <iomanip>
 
-using namespace std;
+#include "../include/debug_system.h"
 
 namespace main_player::core::debug
 {
@@ -12,14 +11,13 @@ namespace main_player::core::debug
     constexpr auto GREEN = "\033[32m";
     constexpr auto RESET = "\033[0m";
 
-    //static unordered_map<std::string, std::string> _dict_log = unordered_map<std::string, std::string>();
-    //static unordered_map<std::string, std::string> _dict_error = unordered_map<std::string, std::string>();
     static std::string _text_log = "";
     static std::string _text_error = "";
 
     std::string get_time()
     {
         auto now = std::chrono::system_clock::now();
+
         std::time_t time = std::chrono::system_clock::to_time_t(now);
         std::tm local_time = *std::localtime(&time);
         std::ostringstream oss;
@@ -29,75 +27,52 @@ namespace main_player::core::debug
         return oss.str();
     }
 
-    /*void add_text_log(const std::string& key, const std::string& log)
-    {
-        if (_dict_log.contains(key)) _dict_log[key] += log;
-        else _dict_log[key] = log;
-    }
-
-    void add_text_error(const std::string& key, const std::string& log)
-    {
-        if (_dict_error.contains(key)) _dict_error[key] += log;
-        else _dict_error[key] = log;
-    }*/
-
-    //Выводят в консоль и кешируют логи
     void debug_system::log(const std::string& tag, const std::string& text)
     {
         auto log = "\n" + get_time() + " " + tag + " => " + text;
 
-        cout << log << std::flush;
-
-        //add_text_log(tag, log);
-        //_text_log += log;
+        std::cout << log << std::flush;
     }
 
     void debug_system::log_green(const std::string& tag, const std::string& text)
     {
         auto log = "\n" + get_time() + " " + tag + " => " + text;
 
-        cout << GREEN << log << RESET << std::flush;
-
-        //add_text_log(tag, log);
-        //_text_log += log;
+        std::cout << GREEN << log << RESET << std::flush;
     }
 
     void debug_system::error(const std::string& tag, const std::string& text)
     {
         auto log = "\n" + get_time() + " " + tag + " => " + text;
 
-        cout << RED << log << RESET << std::flush;
-
-        //add_text_error(tag, log);
-        //_text_error += log;
+        std::cout << RED << log << RESET << std::flush;
     }
 
-    //Вывод кешированных логов
     void debug_system::info_log()
     {
         std::system("/usr/bin/clear");
-        cout << "\n" << _text_log << endl;
+
+        std::cout << "\n" << _text_log << std::endl;
     }
 
     void debug_system::info_log(const std::string& tag)
     {
         std::system("/usr/bin/clear");
-        //if (_dict_log.contains(tag)) cout << _dict_log[tag] << endl;
-        //else
-        cout << "\n" << "logs null" << endl;
+
+        std::cout << "\n" << "logs null" << std::endl;
     }
 
     void debug_system::info_error()
     {
         std::system("/usr/bin/clear");
-        cout << "\n" << _text_error << endl;
+
+        std::cout << "\n" << _text_error << std::endl;
     }
 
     void debug_system::info_error(const std::string& tag)
     {
         std::system("/usr/bin/clear");
-        //if (_dict_error.contains(tag)) cout << _dict_error[tag] << endl;
-        //else
-        cout << "\n" << "logs null" << endl;
+
+        std::cout << "\n" << "logs null" << std::endl;
     }
 }
