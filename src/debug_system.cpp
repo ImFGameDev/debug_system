@@ -29,21 +29,21 @@ namespace main_player::core::debug
 
     void debug_system::log(const std::string& tag, const std::string& text)
     {
-        auto log = "\n" + get_time() + " " + tag + " => " + text;
+        auto log = get_time() + " " + tag + " => " + text + "\n";
 
         std::cout << log << std::flush;
     }
 
     void debug_system::log_green(const std::string& tag, const std::string& text)
     {
-        auto log = "\n" + get_time() + " " + tag + " => " + text;
+        auto log = get_time() + " " + tag + " => " + text + "\n";
 
         std::cout << GREEN << log << RESET << std::flush;
     }
 
     void debug_system::error(const std::string& tag, const std::string& text)
     {
-        auto log = "\n" + get_time() + " " + tag + " => " + text;
+        auto log = get_time() + " " + tag + " => " + text + "\n";
 
         std::cout << RED << log << RESET << std::flush;
     }
@@ -52,27 +52,27 @@ namespace main_player::core::debug
     {
         std::system("/usr/bin/clear");
 
-        std::cout << "\n" << _text_log << std::endl;
+        std::cout << _text_log << std::endl;
     }
 
     void debug_system::info_log(const std::string& tag)
     {
         std::system("/usr/bin/clear");
 
-        std::cout << "\n" << "logs null" << std::endl;
+        std::cout << "logs null" << std::endl;
     }
 
     void debug_system::info_error()
     {
         std::system("/usr/bin/clear");
 
-        std::cout << "\n" << _text_error << std::endl;
+        std::cout << _text_error << std::endl;
     }
 
     void debug_system::info_error(const std::string& tag)
     {
         std::system("/usr/bin/clear");
 
-        std::cout << "\n" << "logs null" << std::endl;
+        std::cout << "logs null" << std::endl;
     }
 }
