@@ -81,9 +81,15 @@ namespace main_player::core::debug
 	void debug_api::show_errors(const std::string& tag) {}
 
 	//options
-	void debug_api::enable_showing_logs_tag(const std::string& tag) {}
+	void debug_api::enable_showing_logs_tag(const std::string& tag)
+	{
+		_tags.insert(tag);
+	}
 
-	void debug_api::disable_showing_logs_tag(const std::string& tag) {}
+	void debug_api::disable_showing_logs_tag(const std::string& tag)
+	{
+		_tags.erase(tag);
+	}
 
 	void debug_api::enable_showing_logs(const std::string& tag, const std::string& log) {}
 
