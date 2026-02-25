@@ -1,4 +1,5 @@
-#pragma once
+#ifndef DEBUG_SYSTEM_H
+#define DEBUG_SYSTEM_H
 
 #include <string>
 
@@ -15,14 +16,8 @@ namespace main_player::core::debug
 
 		static void log_green(const std::string& tag, const std::string& text);
 
-		static void info_log();
-
-		static void info_log(const std::string& tag);
-
 		static void error(const std::string& tag, const std::string& text);
-
-		static void info_error();
-
-		static void info_error(const std::string& tag);
 	};
 }
+
+#endif //DEBUG_SYSTEM_H
