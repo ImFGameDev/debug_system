@@ -25,13 +25,18 @@ namespace main_player::core::debug
 	std::string get_time()
 	{
 		auto now = std::chrono::system_clock::now();
-
 		std::time_t time = std::chrono::system_clock::to_time_t(now);
-		std::tm local_time = *std::localtime(&time);
+
+		std::tm local_time;
+
+#ifdef _WIN32
+		localtime_s(&local_time, &time);
+#else
+		localtime_r(&time, &local_time);
+#endif
+
 		std::ostringstream oss;
-
 		oss << std::put_time(&local_time, "%Y-%m-%d %H:%M:%S");
-
 		return oss.str();
 	}
 
@@ -43,7 +48,16 @@ namespace main_player::core::debug
 
 		if (_tags.contains(tag)) return;
 
-		auto log = get_time() + " " + tag + " => " + text + "\n";
+		// Формируем строку поэтапно
+		std::string log;
+		log.reserve(64 + tag.length() + text.length()); // Предварительное выделение памяти
+
+		log += get_time();
+		log += " ";
+		log += tag;
+		log += " => ";
+		log += text;
+		log += "\n";
 
 		std::cout << log << std::flush;
 	}
@@ -54,7 +68,15 @@ namespace main_player::core::debug
 
 		if (_tags.contains(tag)) return;
 
-		auto log = get_time() + " " + tag + " => " + text + "\n";
+		std::string log;
+		log.reserve(64 + tag.length() + text.length());
+
+		log += get_time();
+		log += " ";
+		log += tag;
+		log += " => ";
+		log += text;
+		log += "\n";
 
 		std::cout << GREEN << log << RESET << std::flush;
 	}
@@ -65,7 +87,15 @@ namespace main_player::core::debug
 
 		if (_tags.contains(tag)) return;
 
-		auto log = get_time() + " " + tag + " => " + text + "\n";
+		std::string log;
+		log.reserve(64 + tag.length() + text.length());
+
+		log += get_time();
+		log += " ";
+		log += tag;
+		log += " => ";
+		log += text;
+		log += "\n";
 
 		std::cout << RED << log << RESET << std::flush;
 	}
